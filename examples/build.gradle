@@ -24,10 +24,13 @@ android {
         }
     }
 
+    flavorDimensions "feature"
     productFlavors {
         withVuforia {
+            dimension "feature"
         }
         withoutVuforia {
+            dimension "feature"
         }
     }
 
@@ -38,6 +41,10 @@ android {
 
     lintOptions {
         abortOnError false;
+    }
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libvraudio_engine.so'
+        pickFirst 'lib/armeabi-v7a/libvrtoolkit.so'
     }
 }
 
